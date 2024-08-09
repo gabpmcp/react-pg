@@ -1,70 +1,70 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Common Design Patterns in Frontend Development with a Functional Approach
 
-## Available Scripts
+This document provides an overview of common design patterns in this project, particularly emphasizing functional design patterns. Functional programming principles promote immutability, pure functions, and higher-order functions, which are beneficial for building scalable, maintainable, and predictable frontend applications.
 
-In the project directory, you can run:
+## Table of Contents
+- [Introduction](#introduction)
+- [Functional Design Patterns](#functional-design-patterns)
+  - [Composition](#composition)
+  - [Currying](#currying)
+  - [Memoization](#memoization)
+  - [Higher-Order Functions (HOFs)](#higher-order-functions-hofs)
+  - [Immutability](#immutability)
+  - [Functional Core, Imperative Shell (FCIS)](#functional-core-imperative-shell-fcis)
+- [Structural Design Patterns](#structural-design-patterns)
+  - [Container/Presentational Components](#containerpresentational-components)
+  - [Module Pattern](#module-pattern)
+- [Behavioral Design Patterns](#behavioral-design-patterns)
+  - [Strategy Pattern](#strategy-pattern)
+- [Conclusion](#conclusion)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In frontend development, design patterns offer reusable solutions to common problems, promoting best practices and making code easier to understand and maintain. Functional design patterns, in particular, bring advantages such as easier testing, reduced side effects, and enhanced readability.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Functional Design Patterns
 
-### `npm test`
+### Composition
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Composition** refers to the process of combining simple functions to build more complex functionality. Instead of relying on inheritance, functions are composed together, promoting reusability and simplicity.
 
-### `npm run build`
+### Currying
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Currying** is the process of transforming a function with multiple arguments into a sequence of functions, each taking a single argument. This allows for partial application of functions, improving reusability.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Memoization
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Memoization** is an optimization technique that caches the result of a function call based on its inputs. If the same inputs occur again, the cached result is returned, avoiding the need for recalculation.
 
-### `npm run eject`
+### Higher-Order Functions (HOFs)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Higher-Order Functions (HOFs)** are functions that take other functions as arguments or return them as results. HOFs are central to functional programming, enabling powerful abstractions and code reuse.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Immutability
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Immutability** involves creating data structures that cannot be modified after their creation. Instead of changing an object or array, a new copy with the desired changes is returned. This practice reduces bugs related to state changes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Functional Core, Imperative Shell (FCIS)
 
-## Learn More
+**Functional Core, Imperative Shell (FCIS)** is a pattern that separates the pure, functional core of an application from the imperative shell that handles side effects like I/O operations. The functional core is predictable, testable, and easy to reason about, while the imperative shell manages the interaction with the outside world, such as user inputs, API calls, or database operations. This pattern ensures that the core logic remains pure and functional, improving maintainability and scalability.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Structural Design Patterns
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Container/Presentational Components
 
-### Code Splitting
+This pattern separates components into two categories: **Container Components** handle the logic and state, while **Presentational Components** focus on how things look. This division improves the separation of concerns and makes components more reusable.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Module Pattern
 
-### Analyzing the Bundle Size
+The **Module Pattern** is used to encapsulate and organize code into self-contained units. This pattern helps manage dependencies and promotes a clean, modular architecture.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Behavioral Design Patterns
 
-### Making a Progressive Web App
+### Strategy Pattern
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The **Strategy Pattern** allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern is useful for implementing different behaviors in a flexible and reusable way.
 
-### Advanced Configuration
+## Conclusion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Implementing these design patterns in frontend development not only promotes code reuse and maintainability but also aligns with the principles of functional programming, leading to more predictable and reliable codebases. By adopting these patterns, you can create scalable applications that are easier to test, debug, and extend.
