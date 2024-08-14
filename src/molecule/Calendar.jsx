@@ -1,6 +1,6 @@
-import { React, useState, useEffect } from 'react'
+import React from 'react'
 import MonthPicker from '../atom/MonthPicker';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Day = () => {
 
