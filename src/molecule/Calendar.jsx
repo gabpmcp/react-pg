@@ -27,7 +27,7 @@ const Month = () => {
       <div className='d-flex flex-wrap'>
         {
           days.map(day =>
-            day.bind === true ?
+            day.bind ?
               <button className='width-day day-button' type="button">{day.idxDay}</button>
             : <div className='width-day hidden' />
           )
