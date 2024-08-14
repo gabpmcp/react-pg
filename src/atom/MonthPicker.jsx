@@ -10,8 +10,6 @@ const MonthPicker = () => {
     dispatch(setMonth(newMonth));
   }
 
-  const days = useSelector(state => state.calendar.days)
-
   return (
     <section id='month-picker' className='d-flex justify-content-evenly align-items-center py-5'>
         <button className='btn btn-dark' onClick={() => handleMonthChange(month - 1)}><span class="material-symbols-outlined">chevron_left</span></button>
