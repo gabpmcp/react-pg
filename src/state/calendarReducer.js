@@ -13,13 +13,13 @@ const generateDays = (month) => {
 export const calendarSlice = createSlice({
     name: 'calendar',
     initialState: {
-      month: moment().month() + 1,  // el mes actual
+      month: moment().month(),  // el mes actual
       days: generateDays(moment().month() + 1),  // días generados para el mes actual
     },
     reducers: {
       setMonth: (state, action) => {
         state.month = action.payload;
-        state.days = generateDays(action.payload);
+        state.days = generateDays(action.payload + 1);
       },
     },
   })
