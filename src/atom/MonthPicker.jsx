@@ -1,35 +1,22 @@
 import moment from 'moment';
-import React, { useReducer, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { setMonth } from '../state/calendarReducer';
 
-const MonthPicker = ({initialMonth, monthChanged}) => {
-  const actions = {
-    INCREMENT: 'INCREMENT',
-    DECREMENT: 'DECREMENT'
+const MonthPicker = () => {
+  const month = useSelector(state => state.calendar.month)
+  const dispatch = useDispatch()
+
+  const handleMonthChange = (newMonth) => {
+    dispatch(setMonth(newMonth));
   }
 
-  const reducer = (state, action) => {
-    let newMonth = 0
-    switch (action) {
-        case actions.INCREMENT:
-          newMonth = (state + 1) % 12
-          monthChanged(newMonth)
-          return newMonth
-        case actions.DECREMENT:
-          newMonth = (state - 1 + 12) % 12
-          monthChanged(newMonth)
-          return newMonth
-        default:
-          return state;
-      }
-  }
-
-  const [month, dispatch] = useReducer(reducer, initialMonth)
+  const days = useSelector(state => state.calendar.days)
 
   return (
     <section id='month-picker' className='d-flex justify-content-evenly align-items-center py-5'>
-        <button className='btn btn-dark' onClick={() => dispatch('DECREMENT')}><span class="material-symbols-outlined">chevron_left</span></button>
+        <button className='btn btn-dark' onClick={() => handleMonthChange(month - 1)}><span class="material-symbols-outlined">chevron_left</span></button>
         <h1>{moment({ month: month }).format('MMMM')}</h1>
-        <button className='btn btn-dark' onClick={() => dispatch('INCREMENT')}><span class="material-symbols-outlined">chevron_right</span></button>
+        <button className='btn btn-dark' onClick={() => handleMonthChange(month + 1)}><span class="material-symbols-outlined">chevron_right</span></button>
     </section>
   )
 }
