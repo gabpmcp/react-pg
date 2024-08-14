@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import MonthPicker from '../atom/MonthPicker';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -11,8 +11,6 @@ const Day = () => {
 
 const Month = () => {
   const days = useSelector(state => state.calendar.days)
-  
-  console.log(`Gabo month:`)
 
   return (
     <section>
