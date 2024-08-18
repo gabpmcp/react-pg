@@ -20,8 +20,8 @@ const Layout = () => {
                 <img src={logo} className='logo' />
                 <nav className='nav d-flex flex-column py-4'>
                     <ul><button className='btn btn-dark col-10' onClick={() => dispatch('day')} type="button">Day</button></ul>
-                    <ul><button className='btn btn-dark col-10' onClick={() => dispatch('week')} type="button">Week</button></ul>
-                    <ul><button className='btn btn-dark col-10' onClick={() => dispatch('month')} type="button">Month</button></ul>
+                    {/* <ul><button className='btn btn-dark col-10' onClick={() => dispatch('week')} type="button">Week</button></ul>
+                    <ul><button className='btn btn-dark col-10' onClick={() => dispatch('month')} type="button">Month</button></ul> */}
                 </nav>
             </section>
             <section className='col-10'>
